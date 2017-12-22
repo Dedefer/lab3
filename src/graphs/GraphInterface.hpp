@@ -17,7 +17,7 @@ namespace lab3 {
 
         using DistArray = std::vector<DistPair>;
 
-        virtual bool Degenerated() const noexcept = 0;
+        virtual bool degenerated() const noexcept = 0;
 
         virtual std::string currentNode() const = 0;
 
