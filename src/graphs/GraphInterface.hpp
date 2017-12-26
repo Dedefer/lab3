@@ -10,7 +10,7 @@
 #include "../lab3_namespace.hpp"
 
 namespace lab3 {
-    class Graph {
+    class GraphInterface {
     public:
 
         using DistPair = std::pair<std::string, double>;
@@ -19,11 +19,13 @@ namespace lab3 {
 
         virtual bool degenerated() const noexcept = 0;
 
+        virtual void moveTo(std::string node) = 0;
+
         virtual std::string currentNode() const = 0;
 
         virtual DistArray neighbourNodes() const = 0;
 
-        virtual ~Graph() = default;
+        virtual ~GraphInterface() = default;
     };
 }
 
