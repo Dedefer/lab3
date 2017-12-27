@@ -6,6 +6,7 @@
 #define LAB3_GRAPH_HPP
 
 #include <map>
+#include <ostream>
 #include "GraphInterface.hpp"
 
 namespace lab3 {
@@ -15,11 +16,11 @@ namespace lab3 {
 
         Graph(std::initializer_list<std::string> initList);
 
-        Graph() = default;
+        Graph() = delete;
 
-        Graph(const Graph& obj) = default;
+        Graph(const Graph&) = default;
 
-        Graph(Graph&& obj) noexcept = default;
+        Graph(Graph&&) noexcept = default;
 
         //operators =
 
@@ -39,11 +40,15 @@ namespace lab3 {
 
         DistArray neighbourNodes() const override;
 
-        void moveTo(std::string) override;
+        void moveTo(const std::string&) override;
 
         //methods to configure
 
-        void updateRelations(std::string node1, std::string node2, double dist);
+        void updateRelations(const std::string& node1, const std::string& node2, double dist);
+
+        // methods to output
+
+        void toDOT(std::ostream& stream, bool realSize) const;
 
     private:
 

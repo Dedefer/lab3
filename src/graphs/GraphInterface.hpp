@@ -19,7 +19,7 @@ namespace lab3 {
 
         virtual bool degenerated() const noexcept = 0;
 
-        virtual void moveTo(std::string node) = 0;
+        virtual void moveTo(const std::string& node) = 0;
 
         virtual std::string currentNode() const = 0;
 
